@@ -1,113 +1,64 @@
 <!DOCTYPE html>
 <html>
 <style>
-    #container {
-        margin-top: 100px;
-        width: 100%;
-        height: 800px;
-        position: relative;
-        display: flex;
-        justify-content: center;
-    }
-
-    #cabinet {
-        width: 500px;
-        height: 750px;
-        position: relative;
-        background: burlywood;
-        border: 1px solid black;
-        background-image: url("../woodmaterial.jpg");
-    }
-
-    #drawer {
+    #pictures {
         position: absolute;
-        margin-left: 15px;
-        margin-top: 50px;
     }
 
-    #front {
-        width: 460px;
-        height: 60px;
-        border: 1px solid black;
-        background-image: url("../whitewood.jpg");
-    }
-    .side1 {
+    #pictures img {
         position: relative;
-        bottom: 20px;
-        left: 225px;
-        background-image: url("../whitewood.jpg");
-        margin: 100px auto;
-        border: 1px solid #000;
-        width: 60px;
-        transform: rotate(270deg) skewX(30deg);
+        height: 200px;
+        width: 200px;
+        display: none;
     }
+
+    #closed img {
+        display: block import !;
+    }
+    a:link {
+background: url("img1.jpg");
+}
+a:hover {
+background: url("img2.jpg");
+}
 </style>
 
-<body>
-
-    <div id="container">
-        <div id="cabinet">
-            <div onclick="myMove()" id="drawer">
-                    <div id="front"></div>
-            </div>
-            <div class="side1" id="side1"></div>
+<body style="background-color: black">
+    <div id="pictures">
+        <div id="closed">
+            <img src="../cabinetclosed.png">
+        </div>
+        <div id="first">
+            <img src="../cabinet1.png">
+        </div>
+        <div id="second">
+            <img src="../cabinet2.png">
+        </div>
+        <div id="third">
+            <img src="../cabinet3.png">
+        </div>
+        <div id="fourth">
+            <img src="../cabinet4.png">
         </div>
     </div>
-
     <script>
-        let isClicked = false;
-        function toggleIsClicked() {
-            isClicked = !isClicked;
+        
+        var picCount = 0; // global
+        var picArray = ["img2.gif", "img3.gif", "img4.gif", "img1.gif"]
+        //
+        // gets next picture in array
+        function nextPic() { // check if adding 1 exceeds number of pics in array
+            picCount = (picCount + 1 < picArray.length) ? picCount + 1 : 0;
+            // build the img to write to page using the new pic reference
+            var build = '<img border="0" src="' + picArray[picCount] + '"width="205" height="100">\';
+            document.getElementById("imgHolder").innerHTML = build;
+            // repeat this after a puse of 2000ms (2sec).
+            setTimeout('nextPic()', 2000)
         }
-        function myMove() {
-            var elem = document.getElementById("drawer");
-            var side1 = document.getElementById("side1");
-            if (!isClicked) {
-                var id = setInterval(frame, 5);
-                var pos1 = 0;
-                var pos2 = 0;
-                var width = 0;
-                var x = 0;
-                var y = 0;
-                function frame() {
-                    if (pos2 <= -200) {
-                        clearInterval(id);
-                        toggleIsClicked();
-                        console.log(width);
-                    } else {
-                        pos1 = pos1 + 1;
-                        pos2 = pos2 - 4;
-                        width+=3;
-                        x+=-0.5;
-                        elem.style.top = pos1 + "px";
-                        elem.style.left = pos2 + "px";
-                        side1.style.height = width + "px";
-                        side1.style.top = x + "px";
-                        side1.style.left = y + "px";
-                    }
-                }
-            }else{
-                var id = setInterval(frame, 5);
-                var pos1 = 50;
-                var pos2 = -200;
-                var width = 150;
-                function frame() {
-                    if (pos2 >= 0) {
-                        clearInterval(id);
-                        toggleIsClicked();
-                    } else {
-                        pos1 = pos1 - 1;
-                        pos2 = pos2 + 4;
-                        width-=3;
-                        elem.style.top = pos1 + "px";
-                        elem.style.left = pos2 + "px";
-                        side1.style.height = width + "px";
-                    }
-                }
-            }
-        }
+        //-->
+        $('#closed').hide();
+        $('#closed').show();
     </script>
-
 </body>
 
 </html>

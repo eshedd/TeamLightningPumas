@@ -1,63 +1,53 @@
 <!DOCTYPE html>
 <html>
 <style>
-    #pictures {
-        position: absolute;
+    html, body {
+        background: url('../cabinetclosed.png') no-repeat center center fixed;
+        background-size: cover;
+        height: 100%;
     }
-
-    #pictures img {
-        position: relative;
-        height: 200px;
-        width: 200px;
-        display: none;
+    #cabinet1, #cabinet2, #cabinet3, #cabinet4 {
+        background-color: red;
+        margin: auto;
+        /* padding-top: 400px; */
+        margin-top: 20px;
+        height: 20%;
+        width: 15%;
+        margin-left: 780px;
     }
-
-    #closed img {
-        display: block import !;
-    }
-    a:link {
-background: url("img1.jpg");
-}
-a:hover {
-background: url("img2.jpg");
-}
 </style>
 
-<body style="background-color: black">
-    <div id="pictures">
-        <div id="closed">
-            <img src="../cabinetclosed.png">
-        </div>
-        <div id="first">
-            <img src="../cabinet1.png">
-        </div>
-        <div id="second">
-            <img src="../cabinet2.png">
-        </div>
-        <div id="third">
-            <img src="../cabinet3.png">
-        </div>
-        <div id="fourth">
-            <img src="../cabinet4.png">
-        </div>
-    </div>
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<body>
+    <div class="help"></div>
+    <div id="cabinet1"></div>
+    <div id="cabinet2"></div>
+    <div id="cabinet3"></div>
+    <div id="cabinet4"></div>
     <script>
-        
-        var picCount = 0; // global
-        var picArray = ["img2.gif", "img3.gif", "img4.gif", "img1.gif"]
-        //
-        // gets next picture in array
-        function nextPic() { // check if adding 1 exceeds number of pics in array
-            picCount = (picCount + 1 < picArray.length) ? picCount + 1 : 0;
-            // build the img to write to page using the new pic reference
-            var build = '<img border="0" src="' + picArray[picCount] + '"width="205" height="100">\';
-            document.getElementById("imgHolder").innerHTML = build;
-            // repeat this after a puse of 2000ms (2sec).
-            setTimeout('nextPic()', 2000)
+        function open1() {
+            // var closed = document.getElementById("closed");
+            // var first = document.getElementById("first");
+            // closed.style.display = "none";
+            // first.style.display = "block";
+            console.log("First Bin Clicked");
         }
-        //-->
-        $('#closed').hide();
-        $('#closed').show();
+        function open2() {
+            // $("#closed").css("display", "none");
+            // $("#first").css("display", "block");
+            console.log("Second Bin Clicked");
+        }
+        function open3() {
+            // $("#closed").css("display", "none");
+            // $("#first").css("display", "block");
+            console.log("Third Bin Clicked");
+        }
+        function open4() {
+            // $("#closed").css("display", "none");
+            // $("#first").css("display", "block");
+            console.log("Fourth Bin Clicked");
+        }
     </script>
 </body>
 

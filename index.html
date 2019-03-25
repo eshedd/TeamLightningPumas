@@ -1,17 +1,259 @@
-<!doctype html>
 
-<head>
+<!-- saved from url=(0049)https://www.the-art-of-web.com/css/rotating-cube/ -->
+<html class="gr__the-art-of-web_com"><script type="text/javascript">window["_gaUserPrefs"] = { ioo : function() { return true; } }</script><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style type="text/css">@-webkit-keyframes spincube {
+    
 
-    <title></title>
-    <meta name="description" content="The HTML5 Herald">
-    <meta name="author" content="SitePoint">
+    from,to  { -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    16%      { -webkit-transform: rotateY(-90deg);                           }
+    33%      { -webkit-transform: rotateY(-90deg) rotateZ(90deg);            }
+    50%      { -webkit-transform: rotateY(-180deg) rotateZ(90deg);           }
+    66%      { -webkit-transform: rotateY(-270deg) rotateX(90deg);           }
+    83%      { -webkit-transform: rotateX(90deg);                            }
+  }@keyframes spincube {
+    from,to {
+      -moz-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+      -ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    16% {
+      -moz-transform: rotateY(-90deg);
+      -ms-transform: rotateY(-90deg);
+      transform: rotateY(-90deg);
+    }
+    33% {
+      -moz-transform: rotateY(-90deg) rotateZ(90deg);
+      -ms-transform: rotateY(-90deg) rotateZ(90deg);
+      transform: rotateY(-90deg) rotateZ(90deg);
+    }
+    50% {
+      -moz-transform: rotateY(-180deg) rotateZ(90deg);
+      -ms-transform: rotateY(-180deg) rotateZ(90deg);
+      transform: rotateY(-180deg) rotateZ(90deg);
+    }
+    66% {
+      -moz-transform: rotateY(-270deg) rotateX(90deg);
+      -ms-transform: rotateY(-270deg) rotateX(90deg);
+      transform: rotateY(-270deg) rotateX(90deg);
+    }
+    83% {
+      -moz-transform: rotateX(90deg);
+      -ms-transform: rotateX(90deg);
+      transform: rotateX(90deg);
+    }
+  }
+  .opacity {
+      opacity: 0.8;
+    }
 
-    <link rel="stylesheet" href="css/styles.css?v=1.0">
+  .cubespinner{
+    -webkit-animation-name:spincube;
+    -webkit-animation-timing-function:ease-in-out;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-duration:12s;
+    animation-name:spincube;
+    animation-timing-function:ease-in-out;
+    animation-iteration-count:infinite;
+    animation-duration:12s;
+    -webkit-transform-style:preserve-3d;
+    -moz-transform-style:preserve-3d;
+    -ms-transform-style:preserve-3d;
+    transform-style:preserve-3d;
+    -webkit-transform-origin:300px 300px 0;
+    -moz-transform-origin:300px 300px 0;
+    -ms-transform-origin:300px 300px 0;
+    transform-origin:300px 300px 0
+}
+.cubespinner div{
+    position:absolute;
+    width:600px;
+    height:600px;
+    border:1px solid #ccc;
+    background:rgba(255,255,255,.8);
+    box-shadow:inset 0 0 20px rgba(0,0,0,.2);
+    text-align:center;
+    font-size:100px
+}
+.cubespinner .face1{
+    -webkit-transform:translateZ(300px);
+    -moz-transform:translateZ(300px);
+    -ms-transform:translateZ(300px);
+    transform:translateZ(300px)
+}
+.cubespinner .face2{
+    -webkit-transform:rotateY(90deg) translateZ(300px);
+    -moz-transform:rotateY(90deg) translateZ(300px);
+    -ms-transform:rotateY(90deg) translateZ(300px);
+    transform:rotateY(90deg) translateZ(300px)
+}
+.cubespinner .face3{
+    -webkit-transform:rotateY(90deg) rotateX(90deg) translateZ(300px);
+    -moz-transform:rotateY(90deg) rotateX(90deg) translateZ(300px);
+    -ms-transform:rotateY(90deg) rotateX(90deg) translateZ(300px);
+    transform:rotateY(90deg) rotateX(90deg) translateZ(300px)
+}
+.cubespinner .face4{
+    -webkit-transform:rotateY(180deg) rotateZ(90deg) translateZ(300px);
+    -moz-transform:rotateY(180deg) rotateZ(90deg) translateZ(300px);
+    -ms-transform:rotateY(180deg) rotateZ(90deg) translateZ(300px);
+    transform:rotateY(180deg) rotateZ(90deg) translateZ(300px)
+}
+.cubespinner .face5{
+    -webkit-transform:rotateY(-90deg) rotateZ(90deg) translateZ(300px);
+    -moz-transform:rotateY(-90deg) rotateZ(90deg) translateZ(300px);
+    -ms-transform:rotateY(-90deg) rotateZ(90deg) translateZ(300px);
+    transform:rotateY(-90deg) rotateZ(90deg) translateZ(300px)
+}
+.cubespinner .face6{
+    -webkit-transform:rotateX(-90deg) translateZ(300px);
+    -moz-transform:rotateX(-90deg) translateZ(300px);
+    -ms-transform:rotateX(-90deg) translateZ(300px);
+    transform:rotateX(-90deg) translateZ(300px)
+}
 
-</head>
+/* Smaller Cube */
 
-<body>
+.cubespinner-small{
+    -webkit-animation-name:spincube;
+    -webkit-animation-timing-function:ease-in-out;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-duration:8s;
+    animation-name:spincube;
+    animation-timing-function:ease-in-out;
+    animation-iteration-count:infinite;
+    animation-duration:8s;
+    -webkit-transform-style:preserve-3d;
+    -moz-transform-style:preserve-3d;
+    -ms-transform-style:preserve-3d;
+    transform-style:preserve-3d;
+    -webkit-transform-origin:60px 60px 0;
+    -moz-transform-origin:60px 60px 0;
+    -ms-transform-origin:60px 60px 0;
+    transform-origin:60px 60px 0
+}
+.cubespinner-small div{
+    position:absolute;
+    width:120px;
+    height:120px;
+    border:1px solid #ccc;
+    background:rgba(255,255,255,.8);
+    box-shadow:inset 0 0 20px rgba(0,0,0,.2);
+    text-align:center;
+    font-size:100px
+}
+.cubespinner-small .face1-small{
+    -webkit-transform:translateZ(60px);
+    -moz-transform:translateZ(60px);
+    -ms-transform:translateZ(60px);
+    transform:translateZ(60px)
+}
+.cubespinner-small .face2-small{
+    -webkit-transform:rotateY(90deg) translateZ(60px);
+    -moz-transform:rotateY(90deg) translateZ(60px);
+    -ms-transform:rotateY(90deg) translateZ(60px);
+    transform:rotateY(90deg) translateZ(60px)
+}
+.cubespinner-small .face3-small{
+    -webkit-transform:rotateY(90deg) rotateX(90deg) translateZ(60px);
+    -moz-transform:rotateY(90deg) rotateX(90deg) translateZ(60px);
+    -ms-transform:rotateY(90deg) rotateX(90deg) translateZ(60px);
+    transform:rotateY(90deg) rotateX(90deg) translateZ(60px)
+}
+.cubespinner-small .face4-small{
+    -webkit-transform:rotateY(180deg) rotateZ(90deg) translateZ(60px);
+    -moz-transform:rotateY(180deg) rotateZ(90deg) translateZ(60px);
+    -ms-transform:rotateY(180deg) rotateZ(90deg) translateZ(60px);
+    transform:rotateY(180deg) rotateZ(90deg) translateZ(60px)
+}
+.cubespinner-small .face5-small{
+    -webkit-transform:rotateY(-90deg) rotateZ(90deg) translateZ(60px);
+    -moz-transform:rotateY(-90deg) rotateZ(90deg) translateZ(60px);
+    -ms-transform:rotateY(-90deg) rotateZ(90deg) translateZ(60px);
+    transform:rotateY(-90deg) rotateZ(90deg) translateZ(60px)
+}
+.cubespinner-small .face6-small{
+    -webkit-transform:rotateX(-90deg) translateZ(60px);
+    -moz-transform:rotateX(-90deg) translateZ(60px);
+    -ms-transform:rotateX(-90deg) translateZ(60px);
+    transform:rotateX(-90deg) translateZ(60px)
+}
 
-</body>
+/* Change Font */
 
-</html>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+  </style>
+  </head>
+  <body data-gr-c-s-loaded="true">
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="#home" class="w3-bar-item w3-button">The Lightning Pumas</a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">About</a>
+      <a href="#menu" class="w3-bar-item w3-button">Projects</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+    </div>
+  </div>
+</div>
+
+<div class="stage" style="width: 600px; height: 600px; margin-left: 30%; margin-top: 200px;">
+
+<!-- Large Middle Cube -->
+<div class="cubespinner">
+    <div class="face1"><a><img src="./assets/images/aiden.jpg" height="100%" width="100%" class="opacity"></a></div>
+    <div class="face2"><a href="https://aol.com"><img src="./assets/images/ethan.jpeg" height="100%" width="100%" class="opacity"></a></div>
+    <div class="face3"><a href="https://duckduckgo.com"><img src="./assets/images/sam.jpeg" height="100%" width="100%" class="opacity"></a></div>
+    <div class="face4"><a href="https://yahoo.com"><img src="./assets/images/daniel.png" height="100%" width="100%" class="opacity"></a></div>
+    <div class="face5"><a href="https://bing.com"><img src="./assets/images/dominic.png" height="100%" width="100%" class="opacity"></a></div>
+    <div class="face6"><a href="https://msn.com"><img src="./assets/images/dtech.png" height="100%" width="100%" class="opacity"></a></div>
+    </div>
+    </div>
+
+  <!-- Small Left Cube -->
+
+<div class="cubespinner-small" style="margin-left: 150px; margin-top: -400px;">
+<div class="face1-small"><a><img src="./assets/images/aiden.jpg" height="100%" width="100%" class="opacity"></a></div>
+<div class="face2-small"><a href="https://aol.com"><img src="./assets/images/ethan.jpeg" height="100%" width="100%" class="opacity"></a></div>
+<div class="face3-small"><a href="https://duckduckgo.com"><img src="./assets/images/sam.jpeg" height="100%" width="100%" class="opacity"></a></div>
+<div class="face4-small"><a href="https://yahoo.com"><img src="./assets/images/daniel.png" height="100%" width="100%" class="opacity"></a></div>
+<div class="face5-small"><a href="https://bing.com"><img src="./assets/images/dominic.png" height="100%" width="100%" class="opacity"></a></div>
+<div class="face6-small"><a href="https://msn.com"><img src="./assets/images/dtech.png" height="100%" width="100%" class="opacity"></a></div>
+</div>
+
+<!-- Small Right Cube -->
+
+<div class="cubespinner-small" style="margin-left: 1400px; margin-top: -150px;">
+<div class="face1-small"><a><img src="./assets/images/aiden.jpg" height="100%" width="100%" class="opacity"></a></div>
+<div class="face2-small"><a href="https://aol.com"><img src="./assets/images/ethan.jpeg" height="100%" width="100%" class="opacity"></a></div>
+<div class="face3-small"><a href="https://duckduckgo.com"><img src="./assets/images/sam.jpeg" height="100%" width="100%" class="opacity"></a></div>
+<div class="face4-small"><a href="https://yahoo.com"><img src="./assets/images/daniel.png" height="100%" width="100%" class="opacity"></a></div>
+<div class="face5-small"><a href="https://bing.com"><img src="./assets/images/dominic.png" height="100%" width="100%" class="opacity"></a></div>
+<div class="face6-small"><a href="https://msn.com"><img src="./assets/images/dtech.png" height="100%" width="100%" class="opacity"></a></div>
+</div>
+
+ <!-- About Section -->
+ <div class="w3-row w3-padding-64" id="about" style="margin-top: 400px;">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <img src="./assets/images/dtech-5.jpg" class="w3-round w3-image" alt="Table Setting" width="600" height="750">
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+      <h1 class="w3-center">About Us</h1><br>
+      <h5 class="w3-center">Tradition since 1889</h5>
+      <p class="w3-large">The Catering was founded in blabla by Mr. Smith in lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute iruredolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.We only use <span class="w3-tag w3-light-grey">seasonal</span> ingredients.</p>
+      <p class="w3-large w3-text-grey w3-hide-medium">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+  </div>
+    
+
+
+
+</body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>

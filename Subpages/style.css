@@ -1,0 +1,30 @@
+.btn {
+    background-color: black; 
+    border: none; 
+    color: white; 
+    padding: 12px 16px; 
+    font-size: 16px; 
+    cursor: pointer; 
+}
+
+.btn:hover {
+    background-color: gray;
+}
+
+iframe {
+    margin-left: -28px;
+}
+
+p2 {
+    float: left;
+    font-size: 20px;
+}
+
+* {
+    background-color: #dae1ea;
+    color: #424242;
+}
+
+img {
+    padding: 10px;
+}

@@ -22,9 +22,13 @@ p2 {
 
 * {
     background-color: #dae1ea;
-    color: #424242;
+    color: #4b4848;
 }
 
 img {
     padding: 10px;
+}
+
+body {
+    background-color: black;
 }
